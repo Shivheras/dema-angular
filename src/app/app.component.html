@@ -1,0 +1,125 @@
+<html>
+<h1>Yahoo!!</h1>
+<head>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"src="https://code.jquery.com/jquery-1.10.2.js">
+          window.onload = function () {
+         
+         var ddlYears = document.getElementById("year");
+         var ddlDay = document.getElementById("bday");
+         
+  
+        
+         var currentYear = (new Date()).getFullYear();
+  
+         
+         for (var i = 1950; i <= currentYear; i++) {
+             var option = document.createElement("OPTION");
+             option.innerHTML = i;
+             option.value = i;
+             ddlYears.appendChild(option);
+         }
+         for (var i = 1 ;i <= 31 ; i ++ )
+         {
+         var option = document.createElement("OPTION");
+             option.innerHTML = i;
+             option.value = i;
+             ddlDay.appendChild(option);
+          }
+     };
+        
+        </script>
+	</head>
+	<body>
+
+<form [formGroup]="userFormGroup"  >
+	
+	
+		<nav class="navbar navbar-light bg-light"></nav>
+		<div class="card m-3"style="width: 45rem;" >
+		<div class="container">
+		<div class="form-group">
+			<h1 class="card-header"> Sign Up</h1>
+		</div>
+		<div class="form-group">
+			<h4 > Create a Yahoo email address</h4>
+		</div>
+    <div  class="card-body">
+		<div class="form-row">
+		<div class="col">
+
+			<input type="text" class="form-control" formControlName="firstName"  placeholder="First Name">
+		</div>
+			<div class="col">
+			<input type="text" class="form-control" formControlName="surname" placeholder="Surname" ><br>
+             </div>
+			</div>
+			<div class="form-group">
+			<input type="text" class="form-control" formControlName="email" placeholder="Email" ><br>
+            
+					<input type="text" class="form-control" formControlName="password" placeholder="Password" aria-describedby="passwordHelpBlock"/>
+					<small id="passwordHelpBlock" class="form-text text-muted">
+  Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+</small>
+
+            </div>
+             <br>
+            <div class="form-group">
+              <select style="width: 9%;border-right: none;border-left: none; border-top: none;">
+                <option>(+91)India</option>
+                <option>(+1)USA/Canada</option>
+                <option>(+44)United Kingdom</option>
+            </select><input type ="text" id="mobile" placeholder="Mobile Number"/></div>
+            <br>
+            <div class="form-group">
+               <label>Birthday</label>
+                <select id="bday" >
+                    <option selected>Day</option>
+                    
+                </select>
+                <select id="month">
+                    <option selected>Month</option>
+                    <option>Jan</option>
+                    <option>Feb</option>
+                    <option>Mar</option>
+                    <option>Apr</option>
+                    <option>May</option>
+                    <option>Jun</option>
+                    <option>Jul</option>
+                    <option>Aug</option>
+                    <option>Sep</option>
+                    <option>nov</option>
+                    <option>Dec</option>
+                </select>
+                <select id="year">
+                    <option selected>Year</option> 
+                </select>
+                
+            </div>
+					
+					<div class="form-group">
+						
+						<input type = "text" id="gender" placeholder="Gender (Optional) "class="form-control" >
+                
+                  </div>
+                  <div>
+                    By clicking "Continue", you agree to the Terms and Privacy Policy
+                    </div>
+
+						<br>
+
+						<div class="form-group">
+							<button type="button" style ="layout-align:center"class="btn btn-primary" data-toggle="button" aria-pressed="false" (click)="submit()">
+ 							 Continue
+								</button>
+
+						</div>
+						Already have account?<a href="">Sign in</a>
+					</div>
+				</div>
+		</div>
+		
+</form>
+
+
+</body>
+	</html>
