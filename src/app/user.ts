@@ -5,9 +5,6 @@ export class User
   email:string;
   password:string;
   mobileNo:number;
-  day:number;
-  month:number;
-  year:number;
   gender:string;
   
 }
