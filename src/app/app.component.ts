@@ -16,13 +16,11 @@ constructor(private formBuilder: FormBuilder) { }
   {
       this.userFormGroup = this.formBuilder.group({
       firstName:['',Validators.required],
-       surname:'',
-        email:'',
-        password:'',
-        mobileNo:'',
-         day:'',
-         month:'',
-         year:'',
+       surname:['',Validators.required],
+        email:['',Validators.required],
+        password:['',Validators.required],
+        mobileNo:['',Validators.required],
+        
         gender:''
 });
   }

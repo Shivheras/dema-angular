@@ -1,33 +1,7 @@
 <html>
 <h1>Yahoo!!</h1>
 <head>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"src="https://code.jquery.com/jquery-1.10.2.js">
-          window.onload = function () {
-         
-         var ddlYears = document.getElementById("year");
-         var ddlDay = document.getElementById("bday");
-         
-  
-        
-         var currentYear = (new Date()).getFullYear();
-  
-         
-         for (var i = 1950; i <= currentYear; i++) {
-             var option = document.createElement("OPTION");
-             option.innerHTML = i;
-             option.value = i;
-             ddlYears.appendChild(option);
-         }
-         for (var i = 1 ;i <= 31 ; i ++ )
-         {
-         var option = document.createElement("OPTION");
-             option.innerHTML = i;
-             option.value = i;
-             ddlDay.appendChild(option);
-          }
-     };
-        
-        </script>
+
 	</head>
 	<body>
 
@@ -68,12 +42,23 @@
                 <option>(+91)India</option>
                 <option>(+1)USA/Canada</option>
                 <option>(+44)United Kingdom</option>
-            </select><input type ="text" id="mobile" placeholder="Mobile Number"/></div>
+            </select><input type ="text" id="mobile" placeholder="Mobile Number"formControlName="mobileNo" /></div>
             <br>
             <div class="form-group">
                <label>Birthday</label>
                 <select id="bday" >
                     <option selected>Day</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    
                     
                 </select>
                 <select id="month">
@@ -91,7 +76,18 @@
                     <option>Dec</option>
                 </select>
                 <select id="year">
-                    <option selected>Year</option> 
+                    <option selected>Year</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option> 
                 </select>
                 
             </div>
@@ -108,7 +104,7 @@
 						<br>
 
 						<div class="form-group">
-							<button type="button" style ="layout-align:center"class="btn btn-primary" data-toggle="button" aria-pressed="false" (click)="submit()">
+							<button [disabled]="userFormGroup.invalid"type="button" style ="layout-align:center"class="btn btn-primary" data-toggle="button" aria-pressed="false" (click)="submit()" >
  							 Continue
 								</button>
 
