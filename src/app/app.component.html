@@ -1,9 +1,7 @@
-<html>
-<h1>Yahoo!!</h1>
-<head>
 
-	</head>
-	<body>
+<h1>Yahoo!!</h1>
+
+
 
 <form [formGroup]="userFormGroup"  >
 	
@@ -48,27 +46,45 @@
 					<div class="form-group">
 						
 						<input type = "text" id="gender" placeholder="Gender (Optional) "class="form-control" >
-                
-                  </div>
-                  <div>
-                    By clicking "Continue", you agree to the Terms and Privacy Policy
-                    </div>
+         </div>
+                  
 
 						<br>
+            <div class="form-group">
+            
+           <div [formGroup]="userFormGroup.controls.address">
+             	<input type="text" class="form-control"  placeholder="Address " >
+         
+			<input type="text" class="form-control" formControlName="city" placeholder="City " >
+          
+			<input type="text" class="form-control" formControlName="state" placeholder="State " >
+          
+      <input type="text" class="form-control" formControlName="postel" placeholder="Postel Code " >
+           </div>
+            </div>
+            <button (click)="addHobby()">Add</button>
 
+		<div formArrayName="hobbies" *ngFor="let hobby of userFormGroup.controls.hobbies?.value; let i = index">
+			<div [formGroupName]="i">
+
+				<input placeholder="hobbyName" formControlName="hobbyName">
+          </div>
+			</div>
+            <div>
+              <button (click)="loadData()">loadData</button>
+            </div>
+             <div>
+                    By clicking "Continue", you agree to the Terms and Privacy Policy
+                    </div>
 						<div class="form-group">
 							<button [disabled]="userFormGroup.invalid"type="button" style ="layout-align:center"class="btn btn-primary" data-toggle="button" aria-pressed="false" (click)="submit()" >
  							 Continue
 								</button>
 
 						</div>
+            <div class="form-group">
 						Already have account?<a href="">Sign in</a>
 					</div>
-				</div>
-		</div>
-		
+    </div></div></div>	
 </form>
 
-
-</body>
-	</html>
