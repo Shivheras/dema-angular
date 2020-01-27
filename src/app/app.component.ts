@@ -28,7 +28,7 @@ constructor(private formBuilder: FormBuilder) { }
         state:'',
         postel:'',
       }),
-      //this.userFormGroup.controls.firstName.patchValue('shivani'),
+     
       hobbies:this.formBuilder.array([]),
   });
   }
@@ -36,21 +36,7 @@ constructor(private formBuilder: FormBuilder) { }
   {
     console.log(this.userFormGroup.value);
   }
- loadData()
- {
-   this.userFormGroup.setValue({
-     firstName:'shivani',
-     surname:'chaudhari',
-     email:'sdcs',
-     password:'csa',
-     mobileNo:'sdcs',
-     gender:'female',
-     address:'',
-      city:'surat',
-        state:'',
-        postel:'',
-   })
- }
+ 
   addHobby()
   {
     const hobby = this.userFormGroup.controls.hobbies as FormArray;
