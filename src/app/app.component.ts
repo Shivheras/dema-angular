@@ -18,7 +18,7 @@ constructor(private formBuilder: FormBuilder) { }
       firstName:['',Validators.required],
        surname:['',Validators.required],
         email:['',Validators.required],
-        password:['',Validators.required],
+        password:['',Validators.required,Validators.maxLength(16)],
         mobileNo:['',Validators.required],
      
         gender:'',
