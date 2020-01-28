@@ -21,6 +21,8 @@
 
 			<input type="text" class="form-control" formControlName="firstName"  placeholder="First Name">
 		</div>
+    <div  *ngIf="userFormGroup.controls.firstName.dirty  && userFormGroup.controls.firstName.touched" style="color:blue">This field has been modified </div>
+        
 			<div class="col">
 			<input type="text" class="form-control" formControlName="surname" placeholder="Surname" ><br>
              </div>
